@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mspedido-service
+    name: msgateway-service
   profiles:
     active: development
   config:
