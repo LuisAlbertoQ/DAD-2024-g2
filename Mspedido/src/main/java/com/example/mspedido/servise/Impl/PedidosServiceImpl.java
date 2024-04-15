@@ -33,6 +33,14 @@ public class PedidosServiceImpl implements PedidosService {
     public Pedidos guardar(Pedidos pedidos) {
         return pedidosRepository.save(pedidos);
     }
+    /*@Override
+    public Pedidos guardar(Pedidos pedidos) {
+        if (!pedidosRepository.existsById(pedidos.getId())){
+            return pedidosRepository.save(pedidos);
+        }else {
+            throw new RuntimeException("El pedido con ID" + pedidos.getId() + "Ya existe en la base de datos");
+        }
+    } */
 
 
     @Override
