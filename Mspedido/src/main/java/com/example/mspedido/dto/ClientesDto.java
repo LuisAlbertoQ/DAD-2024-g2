@@ -8,5 +8,5 @@ public class ClientesDto {
     private String nombres;
     private String apellidos;
     private String dni;
-    private String celular;
+    private Number celular;
 }

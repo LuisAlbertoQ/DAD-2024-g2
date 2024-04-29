@@ -1,6 +1,7 @@
 package com.example.mscatalogo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,8 +19,8 @@ public class Producto {
     private String descripcion;
     private BigDecimal precio;
     private LocalDate fecha_creacion;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Categoria categoria;
 }
