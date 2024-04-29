@@ -21,6 +21,7 @@ public class Pedidos {
     private LocalDate fecha;
     private String estado;
     private BigDecimal total;
+
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "venta_id")
