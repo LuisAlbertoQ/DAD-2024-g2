@@ -25,7 +25,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/DAD-2024-g2/Msregistry-server",
+    "last_opened_file_path": "D:/DAD-2024-g2",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -51,6 +51,7 @@
       <updated>1713188539258</updated>
       <workItem from="1713188540335" duration="1000" />
       <workItem from="1714395672888" duration="118000" />
+      <workItem from="1715000250348" duration="72000" />
     </task>
     <servers />
   </component>
