@@ -11,9 +11,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+
 @Component
 public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> {
     private WebClient.Builder webClient;
+
 
     public AuthFilter(WebClient.Builder webClient) {
         super(Config.class);
@@ -30,7 +32,7 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
                 return onError(exchange, HttpStatus.BAD_REQUEST);
             return webClient.build()
                     .post()
-                    .uri("http://ms-auth-service/auth/validate?token=" + chunks[1])
+                    .uri("http://msauth-service/auth/validate?token=" + chunks[1])
                     .retrieve().bodyToMono(TokenDto.class)
                     .map(t -> {
                         t.getToken();
@@ -39,13 +41,16 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
         }));
     }
 
+
     public Mono<Void> onError(ServerWebExchange exchange, HttpStatus status){
         ServerHttpResponse response = exchange.getResponse();
         response.setStatusCode(status);
         return ((ServerHttpResponse) response).setComplete();
     }
 
+
     public static class Config {}
+
 
 }
 
